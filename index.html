@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,8 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         @font-face {
             font-family: TESLA;
@@ -246,7 +248,7 @@
                         <span class="p-2 mbr-iconfont socicon-youtube socicon"></span>
                     </a>
                 </div>
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="#">CONNECT</a>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4 connectWalletBtn" href="#">CONNECT</a>
                 </div>
             </div>
         </div>
@@ -265,9 +267,9 @@
             </h6>
         </div>
         <div class="counter">
-            <li>-</li>
-            <li class="number">10</li>
-            <li>+</li>
+            <li id="decrementAmountBtn">-</li>
+            <li class="number"><input id="amountToMint" value="2" size="2"/></li>
+            <li id="incrementAmountBtn">+</li>
         </div>
         <div class="charity-price">
             <h4 style="font-size: 30px"><span> 0.05 just 500 nfts</span></h4>
@@ -276,9 +278,15 @@
             <h4 style="font-size: 30px"><span>0.09 WL</span></h4>
             <h4 style="font-size: 30px"><span>0.12 PUBLIC</span></h4>
             <h4 style="font-size: 30px">Max 5 Per Transaction</h4>
+            <h4 id="priceOfNft" style="font-size: 30px;margin-top: 20px;"></h4>
         </div>
-        <div class="mbr-section-btn align-center mt-5"><a class="btn btn-primary display-4" href="#background">Connect Wallet</a>
+        <div class="mbr-section-btn align-center mt-5">
+            <h4 style="font-size: 30px"><span id="totalMinted"></span></h4>
+            <button class="btn btn-primary display-4" type="button" id="connectWalletBtn">Connect Wallet</button>
+            <br/>
+            <center><button class="btn btn-primary display-4 text-center" type="button" id="mintButton" style="display: none">MINT Astronaut</button></center>
         </div>
+        <div class="spinner-loader"></div>
     </div>
 </section>
 
@@ -336,6 +344,8 @@
 <script src="assets/countdown/countdown.js"></script>
 <script src="assets/theme/js/script.js"></script>
 
-
+<!-- partial -->
+<script src='assets/js/jquery.min.js'></script>
+<script src="assets/js/web3-provider.js"></script>
 </body>
 </html>
