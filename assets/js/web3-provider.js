@@ -102,13 +102,9 @@ window.addEventListener('DOMContentLoaded', async() => {
         document.querySelector('.spinner-loader').style.display = 'none'
     })
 
-    document.getElementById('incrementAmountBtn').addEventListener('click', () => setMintAmount(Number(document.getElementsByClassName('amountToMint').value) + 1))
+    document.getElementById('incrementAmountBtn').addEventListener('click', () => setMintAmount(Number(document.getElementById('amountToMint').value) + 1))
 
-    document.getElementById('decrementAmountBtn').addEventListener('click', () => setMintAmount(Number(document.getElementsByClassName('amountToMint').value) - 1))
-
-    document.getElementById('mintAmount1').addEventListener('click', () => setMintAmount(1))
-    document.getElementById('mintAmount3').addEventListener('click', () => setMintAmount(3))
-    document.getElementById('mintAmount5').addEventListener('click', () => setMintAmount(5))
+    document.getElementById('decrementAmountBtn').addEventListener('click', () => setMintAmount(Number(document.getElementById('amountToMint').value) - 1))
 
     function setMintAmount(value) {
         if (value > 0 && value < 6) {
